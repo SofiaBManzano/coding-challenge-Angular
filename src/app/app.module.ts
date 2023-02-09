@@ -21,6 +21,7 @@ import { ButtonModule } from 'primeng/button';
 import { AppMainModule } from './main/app.main.module';
 import { DemoModule } from './demo/demo.module';
 import { HomeModule } from './home/home.module';
+import { CommonModule } from "@angular/common";
 
 registerLocaleData(en);
 
@@ -31,7 +32,7 @@ registerLocaleData(en);
   ],
 
   imports: [
-
+    CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,

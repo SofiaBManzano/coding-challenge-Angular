@@ -7,13 +7,14 @@ import { MenubarModule } from "primeng/menubar";
 import { InputTextModule } from "primeng/inputtext";
 import { ButtonModule } from "primeng/button";
 import { AppMainComponent } from "./app.main.component";
+import { CommonModule } from "@angular/common";
 
 registerLocaleData(en);
 
 @NgModule({
   declarations: [AppMainComponent],
 
-  imports: [NgxsFormPluginModule, MenubarModule, InputTextModule, ButtonModule],
+  imports: [CommonModule, NgxsFormPluginModule, MenubarModule, InputTextModule, ButtonModule],
 
   exports: [AppMainComponent],
 })

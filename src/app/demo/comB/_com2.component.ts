@@ -1,52 +1,30 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
 import { Observable, Subscription } from 'rxjs';
+// import {TableModule} from 'primeng/table';
 import { Add, DemoState, DemoStateModel, Find, Substract } from '../demo.state';
+import {bookData, Book} from './utils/data'
+import { BrowserModule } from '@angular/platform-browser'
+import { CommonModule } from "@angular/common";
+
 
 @Component({
   selector: 'app-2',
   templateUrl: './_com2.component.html',
   styleUrls: ['./_com2.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  
 })
-export class Com2Component implements OnInit, OnDestroy {
 
-  fail = false;
-  errorMessage;
-  errorDetail;
 
-  @Select(DemoState) state$: Observable<DemoStateModel>;
-  _state: Subscription;
+export class Com2Component implements OnInit {
+  bookData: Book[] = [];
 
-  constructor(
-    private store: Store
-  ) { }
-
-  ngOnInit() {
-    this._state = this.state$.subscribe(state => {
-      if (state.error && state.error !== this.errorDetail) {
-        this.errorDetail = state.error;
-        this.errorMessage = [{
-          severity: 'error',
-          summary: 'Error',
-          detail: this.errorDetail
-        }]
-      }
-    });
-
-    Find.dispatch(this.store);
+  ngOnInit(): void {
+    this.bookData = bookData
   }
 
-  ngOnDestroy() {
-    this._state.unsubscribe();
+  deleteBook() {
+    this.bookData = this.bookData.splice(-1)
   }
-
-  onAdd() {
-    Add.dispatch(this.store, { amount: 1, fail: this.fail })
-  }
-
-  onSubstract() {
-    Substract.dispatch(this.store, { amount: 1, fail: this.fail });
-  }
-
 }

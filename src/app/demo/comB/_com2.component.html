@@ -1,1 +1,16 @@
-<p>gifdn</p>
+<div>
+    <h1 >Lista de libros</h1>
+    <pre>{{bookData[0].code}}</pre>
+    <table  class="default">
+        <tr class="title">
+          <th>Code</th>
+          <th>Name</th>
+        </tr>
+        <tr *ngFor="let book of bookData">
+          <td>{{bookData[0].code}}</td>
+          <td>{{book.name}}</td>
+        </tr>
+    </table>
+    <button (click)="deleteBook()">Delete</button>
+</div>
+  

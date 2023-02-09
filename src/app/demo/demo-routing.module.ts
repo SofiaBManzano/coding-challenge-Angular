@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DemoComponent } from './demo.component';
 import { Com1Component } from './comA/_com1.component';
 import { Com2Component } from './comB/_com2.component';
+import { CommonModule } from "@angular/common";
 
 const routes: Routes = [
   {
@@ -28,7 +29,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes),CommonModule],
   exports: [RouterModule]
 })
 export class DemoRoutingModule { }

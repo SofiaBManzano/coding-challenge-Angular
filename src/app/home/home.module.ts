@@ -5,13 +5,14 @@ import { NgxsFormPluginModule } from "@ngxs/form-plugin";
 import { HomeComponent } from "./home.component";
 
 import { CardModule } from "primeng/card";
+import { CommonModule } from "@angular/common";
 
 registerLocaleData(en);
 
 @NgModule({
   declarations: [HomeComponent],
 
-  imports: [NgxsFormPluginModule, CardModule],
+  imports: [NgxsFormPluginModule, CardModule, CommonModule],
 
   exports: [HomeComponent],
 })

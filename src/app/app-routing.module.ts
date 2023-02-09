@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppMainComponent } from './main/app.main.component';
 import { HomeComponent } from './home/home.component';
+import { CommonModule } from "@angular/common";
 
 const routes: Routes = [
   {
@@ -30,7 +31,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
+  imports: [CommonModule,RouterModule.forRoot(routes, {
     paramsInheritanceStrategy: 'always'
   })],
   exports: [RouterModule]
