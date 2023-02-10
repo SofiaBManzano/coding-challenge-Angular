@@ -1,11 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
-import { Observable, Subscription } from 'rxjs';
 import {TableModule} from 'primeng/table';
-import { Add, DemoState, DemoStateModel, Find, Substract } from '../demo.state';
 import {bookData, Book} from './utils/data'
-import { BrowserModule } from '@angular/platform-browser'
-import { CommonModule } from "@angular/common";
+
 
 
 @Component({
