@@ -22,6 +22,7 @@ import { AppMainModule } from './main/app.main.module';
 import { DemoModule } from './demo/demo.module';
 import { HomeModule } from './home/home.module';
 import { CommonModule } from "@angular/common";
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 registerLocaleData(en);
 
@@ -36,6 +37,8 @@ registerLocaleData(en);
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    ScrollingModule,
+    
 
     NgxsDispatchPluginModule.forRoot(),
     NgxsModule.forRoot([], {

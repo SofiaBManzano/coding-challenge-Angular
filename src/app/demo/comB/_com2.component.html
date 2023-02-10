@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
     <h1 >Lista de libros</h1>
     <pre>{{bookData[0].code}}</pre>
     <table  class="default">
@@ -7,10 +7,26 @@
           <th>Name</th>
         </tr>
         <tr *ngFor="let book of bookData">
-          <td>{{bookData[0].code}}</td>
+          <td>{{book.code}}</td>
           <td>{{book.name}}</td>
         </tr>
     </table>
     <button (click)="deleteBook()">Delete</button>
 </div>
-  
+   -->
+
+<p-table [value]="bookData">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-book>
+        <tr>
+          <td>{{book.code}}</td>
+          <td>{{book.name}}</td>
+        </tr>
+    </ng-template>
+</p-table>
+<button (click)="deleteBook()">Delete</button>

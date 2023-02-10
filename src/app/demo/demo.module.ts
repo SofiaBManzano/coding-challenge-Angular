@@ -14,6 +14,7 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { ButtonModule } from 'primeng/button';
 import { BadgeModule } from 'primeng/badge';
 import { FieldsetModule } from 'primeng/fieldset';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
 
@@ -29,7 +30,8 @@ import { FieldsetModule } from 'primeng/fieldset';
     CheckboxModule,
     ButtonModule,
     BadgeModule,
-    FieldsetModule
+    FieldsetModule,
+    ScrollingModule
   ],
 
   declarations: [
